@@ -11,3 +11,24 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+
+/* reset css */
+
+body,html{border:0;padding:0;margin:0;width:100%;height: 100%;}
+#root{height: 100%;}
+/* global css */
+.header{background:red;float:left;height: 300px;width: 100%;}
+.navigation{background:green;float:left;height: calc(100% - 500px);width: 300px;}
+.content{background:gray;float:left;height: auto;min-height: calc(100% - 500px); width: calc(100% - 300px);}
+.footer{background:blue;float:left;height: 200px;width: 100%;}
+
+/* adjustment when window becomes smaller */
+@media only screen and (max-width: 937px) {
+    .navigation, .content { height: auto;width: 100%;}
+    .product{background: green;}
+}
+
+.product{float:left;height: 300px;width:200px;background:skyblue;margin:2px;}
+.clear{clear: both;}
+

@@ -17,6 +17,14 @@
     </style>
 
     <style>
+        /* adjustment when window becomes smaller */
+        @media only screen and (max-width: 937px) {
+            .navigation, .content { height: auto;width: 100%;}
+            .product{background: green;}
+        }
+    </style>
+
+    <style>
         .product{float:left;height: 300px;width:200px;background:skyblue;margin:2px;}
         .clear{clear: both;}
     </style>
@@ -24,7 +32,15 @@
 
 <body>
     <div class="header"> header</div>
-    <div class="navigation"> navigation</div>
+    <div class="navigation"> 
+        navigation
+        <ol>
+            <li><a href="home">home</a></li>
+            <li><a href="home">profile</a></li>
+            <li><a href="home">about</a></li>
+            <li><a href="home">login</a></li>
+        </ol>
+    </div>
     <div class="content">
         <div class="product">product</div>
         <div class="product">product</div>
@@ -34,6 +50,7 @@
         <div class="product">product</div>
         <div class="product">product</div>
     </div>
+</div>
     <div class="footer">footer</div>
 </body>
 </html>

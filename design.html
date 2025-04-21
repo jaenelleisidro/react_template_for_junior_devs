@@ -12,8 +12,11 @@
         /* global css */
         .header{background:red;float:left;height: 300px;width: 100%;}
         .navigation{background:green;float:left;height: calc(100% - 500px);width: 300px;}
-        .content{background:gray;float:left;height: auto;min-height: calc(100% - 500px); width: calc(100% - 300px);}
+        .content{background:gray;float:left;height: calc(100% - 500px);min-height: calc(100% - 500px); width: calc(100% - 300px);}
         .footer{background:blue;float:left;height: 200px;width: 100%;}
+
+        .clear{clear: both;}
+        .center{height:100%;width:100%;display: flex;justify-content: center;align-items: center;}
     </style>
 
     <style>
@@ -25,8 +28,12 @@
     </style>
 
     <style>
+        /* homepage css */
         .product{float:left;height: 300px;width:200px;background:skyblue;margin:2px;}
-        .clear{clear: both;}
+    </style>
+
+    <style>
+        .login{height: 400px;width:400px;background:skyblue;}
     </style>
 
 
@@ -49,6 +56,17 @@
         <div class="product">product</div>
         <div class="product">product</div>
         <div class="product">product</div>
+        <!-- <div class="center">
+            <div class="login center">
+                login
+                <form action="">
+                    <input type="text"><br/>
+                    <input type="password"><br/>
+                    <input type="button">
+                </form>
+            </div>    
+        </div> -->
+
     </div>
 </div>
     <div class="footer">footer</div>

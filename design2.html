@@ -5,7 +5,7 @@
 body,html{height: 100%;border: 0;margin: 0;padding: 0;}
 
 
-.grid-container {
+.page {
   display: grid;
   grid-template-areas:
     'header header header'
@@ -18,37 +18,52 @@ body,html{height: 100%;border: 0;margin: 0;padding: 0;}
     height: 100%;
 }
 
-.grid-container > div {
+.page > div {
   padding: 0;
   font-size: 30px;
   text-align: center;
 }
 
-.grid-container .item1 { grid-area: header; background: red;}
-.grid-container .item2 { grid-area: menu; background: green;}
-.item3 { grid-area: main; background: plum;}
-.grid-container .item4 { grid-area: right;background: purple;}
-.grid-container .item5 { grid-area: footer;background: blue;}
+.page .header { grid-area: header; background: red;}
+.page .menu { grid-area: menu; background: green;}
+.main { grid-area: main; background: plum;}
+.page .right { grid-area: right;background: purple;}
+.page .footer { grid-area: footer;background: blue;}
 
+@media only screen and (max-width: 1075px) {
+    .page {
+        grid-template-areas:
+        'header header header'
+        'menu main main'
+        'right right right'
+        'footer footer footer';
+        grid-template-rows: 100px 1fr 50px 50px;
+    }
+}
+
+@media only screen and (max-width: 875px) {
+    .page {
+        grid-template-areas:
+        'header header header'
+        'menu menu menu'
+        'main main main'
+        'right right right'
+        'footer footer footer';
+        grid-template-rows: 100px 300px 1fr 50px  50px;
+    }
+}
+
+.centercontent{display: flex;align-items: center;justify-content: center;}
+.fillparent{height: 100%;width: 100%;}
 
 </style>
 </head>
 <body>
-<div class="grid-container">
-  <div class="item1">Header</div>
-  <div class="item2">Menu</div>
-  <div class="item3">
-        Main
-
-        <style>
-            .centercontent{
-                display: flex;
-                align-items: center;
-                justify-content: center;
-            }
-            .fillparent{height: 100%;width: 100%;}
-        </style>
-
+<div class="page">
+  <div class="header">Header</div>
+  <div class="menu">Menu</div>
+  <div class="main">
+<!-- 
         <div class="fillparent centercontent">
             <div style="height: 200px;width: 300px;background: skyblue;font-size: 12px;">
                 <h1>Login to your account</h1>
@@ -59,20 +74,16 @@ body,html{height: 100%;border: 0;margin: 0;padding: 0;}
                 </form>
             
             </div>
-        </div>
+        </div> -->
 
 
-        <!-- <style>
-        .flex-container {
-          display: flex;
-          height: 100%;
-          width: 100%;
+        <style>
+        .item-container {
           background-color: #f1f1f1;
-          justify-content: center;
           flex-flow: row wrap;
         }
         
-        .flex-container > div {
+        .item-container > div {
           background-color: DodgerBlue;
           color: white;
           width: 200px;
@@ -83,7 +94,7 @@ body,html{height: 100%;border: 0;margin: 0;padding: 0;}
           font-size: 30px;
         }
         </style>
-        <div class="flex-container">
+        <div class="item-container centercontent fillparent">
             <div>1</div>
             <div>2</div>
             <div>3</div>
@@ -94,13 +105,13 @@ body,html{height: 100%;border: 0;margin: 0;padding: 0;}
             <div>8</div>
             <div>9</div>
             <div>10</div>
-          </div> -->
+          </div>
 
 
 
   </div>  
-  <div class="item4">Right</div>
-  <div class="item5">Footer</div>
+  <div class="right">Right</div>
+  <div class="footer">Footer</div>
 </div>
 
 </body>

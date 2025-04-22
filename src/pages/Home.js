@@ -1,19 +1,25 @@
+import api from './../common/Api'
+
+import { useEffect, useState} from 'react';
+
 const Home = () => {
+
+  const [files, setFiles] = useState([]);
+
+  useEffect(() => {
+    (async ()=>{
+      const res=await api.get('files');
+      const files = res?.data?.data||[];
+      setFiles(files);
+      console.log(files)
+    })();
+  }, []);
+
+
     return <>
     <div className="item-container centercontent fillparent">
-  <div>1</div>
-  <div>2</div>
-  <div>3</div>
-  <div>4</div>
-  <div>5</div>
-  <div>6</div>
-  <div>7</div>
-  <div>8</div>
-  <div>9</div>
-  <div>10</div>
-</div>
-
-    
+      {files.map((file)=><div>{file.name}</div>)}
+    </div>
     </>;
   };
   
